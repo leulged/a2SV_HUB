@@ -1,7 +1,7 @@
 class Solution:
     def subarraysDivByK(self, nums: List[int], k: int) -> int:
         prefix_sum = 0
-        remainder_map = {0: 1}  # Initialize remainder 0 occurring once
+        remainder_map = {0: 1}  
         count = 0
 
         for num in nums:
