@@ -25,9 +25,5 @@ class Solution:
             pos += 1
             head = head.next
         
-        while even.next:
-            new_node = ListNode(even.next.val)
-            odd_curr.next = new_node
-            even = even.next
-            odd_curr = odd_curr.next
+        odd_curr.next = even.next
         return odd.next
