@@ -3,16 +3,11 @@ class Solution:
         n = len(nums) - 1
         mx = 0
         for i in range(n):
-            if nums[i] != 0:
-                mx = max(mx - 1 , nums[i])
 
-            else:
+            if mx + i - 1 <= i and nums[i] == 0:
+                return False
 
-                if mx + i - 1 <= i:
-                    return False
-
-                mx -= 1
-                
+            mx = max(mx - 1 , nums[i])
         return True
         
        
