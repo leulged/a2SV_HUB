@@ -16,9 +16,9 @@ class Solution:
                     
                     if stack and stack[-1] == "(":
                         stack.pop()
-                        stack.append(2 * temp_score)  # Double the nested score
+                        stack.append(2 * temp_score)  
                     else:
                         stack.append(temp_score)
         
-        return sum(stack)  # Sum all scores in the stack
+        return sum(stack)  
 
