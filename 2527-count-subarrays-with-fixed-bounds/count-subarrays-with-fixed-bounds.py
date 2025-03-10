@@ -16,16 +16,16 @@ class Solution:
                 max_deque.clear()
                 continue
 
-            while min_deque and nums[min_deque[-1]] >= nums[right]:
-                min_deque.pop()
 
             if nums[right] == minK:
+                if min_deque:
+                    min_deque.pop()
                 min_deque.append(right)
 
-            while max_deque and nums[max_deque[-1]] <= nums[right]:
-                max_deque.pop()
 
             if nums[right] == maxK:
+                if max_deque:
+                    max_deque.pop()
                 max_deque.append(right)
 
 
