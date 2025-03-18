@@ -1,18 +1,15 @@
 class Solution:
     def totalNumbers(self, digits: List[int]) -> int:
-        
-        seen = set()
-        for i in range(len(digits)):
+        unique = set()
+        for perm in permutations(digits, 3):
+            if perm[0] == 0:
+                continue
+
+            if perm[2] %2 != 0:
+                continue
             
-            for j in range(len(digits)):
+            unique.add(perm)
 
-                for k in range(len(digits)):
+        return len(unique)
 
-                    if i!=j and i!=k and j!=k:
-                        sm = digits[i] * 100 + digits[j] * 10 + digits[k]
-
-                        if sm % 2 == 0 and len(str(sm)) == 3:
-                            seen.add(sm)
-        print(seen)
-        return len(seen)
 
