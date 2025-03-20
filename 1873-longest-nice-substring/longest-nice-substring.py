@@ -3,22 +3,16 @@ class Solution:
         if len(s) < 2:
             return ""
 
-        max_nice_substring = ""
+        chars = set(s)
+        for i , char in enumerate(s):
+            if char.swapcase() not in chars:
+                left = self.longestNiceSubstring(s[:i])
+                right = self.longestNiceSubstring(s[i + 1:])
+            
+                if len(left) >= len(right):
+                    return left
 
-        for i in range(len(s)):
-            for j in range(i + 1, len(s) + 1):
-                sub_str = s[i:j]
+                else:
+                    return right
 
-                if self.isNice(sub_str) and len(sub_str) > len(max_nice_substring):
-                    max_nice_substring = sub_str
-
-        return max_nice_substring
-
-    def isNice(self, sub: str) -> bool:
-        char_set = set(sub)
-        
-        for c in sub:
-            if c.lower() not in char_set or c.upper() not in char_set:
-                return False 
-        
-        return True  
+        return s
