@@ -13,8 +13,9 @@ class Solution:
             ans += 4
             for dr, dc in direction:
                 new_row, new_col = row + dr, col + dc
+                valid = inbound(new_row, new_col)
                 
-                if inbound(new_row, new_col) and grid[new_row][new_col] == 1:
+                if valid and grid[new_row][new_col] == 1:
                     ans -= 1 
 
                     if not visited[new_row][new_col]:
