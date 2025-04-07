@@ -16,8 +16,8 @@ class Solution:
                 if inbound(new_row, new_col):
                     if grid[new_row][new_col] == 1:
                         ans -= 1 
-                    if grid[new_row][new_col] == 1 and not visited[new_row][new_col]:
-                        dfs(new_row, new_col)
+                        if not visited[new_row][new_col]:
+                            dfs(new_row, new_col)
 
         ans = 0
         for i in range(rows):
