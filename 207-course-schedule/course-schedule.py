@@ -15,14 +15,14 @@ class Solution:
             
             color[node] = 1
             
-            if node in graph:
-                for neig in graph[node]:
-                    if color[neig] == -1:
-                        dfs(neig)
-                    
-                    elif color[neig] == 1:
-                        cycle = True
-            
+            # if node in graph:
+            for neig in graph[node]:
+                if color[neig] == -1:
+                    dfs(neig)
+                
+                elif color[neig] == 1:
+                    cycle = True
+        
             color[node] = 2
         
         cycle = False
