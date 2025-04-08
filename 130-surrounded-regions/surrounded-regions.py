@@ -21,11 +21,10 @@ class Solution:
                     dfs(row, col)
 
         for col in range(len(board[0])):
-            for row in [0, len(board)-1]:  # check the first and last row
+            for row in [0, len(board)-1]:  
                 if board[row][col] == 'O' and not visit[row][col]:
                     dfs(row, col)
 
-        # After DFS, convert the remaining 'O's to 'X'
         for row in range(len(board)):
             for col in range(len(board[0])):
                 if board[row][col] == 'O' and not visit[row][col]:
