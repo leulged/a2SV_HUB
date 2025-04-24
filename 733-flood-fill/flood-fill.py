@@ -10,11 +10,13 @@ class Solution:
 
         def inbound (row , col):
             return 0 <= row < n and 0 <= col < m
+            
         visited = [[False for _ in range(m)] for _ in range(n)]
+
         def dfs(row , col):
             visited[row][col] = True
             image[row][col] = color
-            
+
             for x , y in dir:
                 new_row = x + row
                 new_col = y + col
