@@ -26,7 +26,7 @@ class Solution:
                     if preq[i][curr]:  # if i is a prerequisite of curr
                         preq[i][neighbor] = True
                   # Also keep the direct one
-                preq[curr][neighbor] = True
+                # preq[curr][neighbor] = True
                 indegree[neighbor] -= 1
                 if indegree[neighbor] == 0:
                     queue.append(neighbor)
