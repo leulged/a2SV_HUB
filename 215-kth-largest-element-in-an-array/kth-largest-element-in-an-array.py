@@ -16,12 +16,11 @@ class Solution:
 
         n = len(nums)
 
-        for i in range(n // 2 - 1, -1, -1):
-            heapify_down(nums, n, i)
-
-        for end in range(n - 1, 0, -1):
-            nums[0], nums[end] = nums[end], nums[0]  
-            heapify_down(nums, end, 0)       
+        for i in range(n // 2 - 1 , -1 , -1):
+            heapify_down(nums , n , i)
+        
+        for end in range(n - 1 , 0 , -1):
+            nums[0] , nums[end] = nums[end] , nums[0]
+            heapify_down(nums , end , 0)
 
         return nums[k - 1]
-        
