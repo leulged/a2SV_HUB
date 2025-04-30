@@ -27,9 +27,10 @@ class Solution:
                 for neigh , wei in graph[node]:
                     if neigh == end:
                         ans[i] = wei * value
+                        break
 
                     elif neigh not in visited:
                         visited.add(neigh)
                         queue.append((neigh , value * wei))
-                        
+
         return ans
