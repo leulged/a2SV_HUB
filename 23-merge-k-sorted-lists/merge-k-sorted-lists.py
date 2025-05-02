@@ -12,7 +12,7 @@ class Solution:
                 heappush(heap, (node.val, i, node))  
         dummy = ListNode(0)
         curr = dummy
-
+        print(heap)
         while heap:
             val, i, node = heappop(heap)  
             curr.next = node
