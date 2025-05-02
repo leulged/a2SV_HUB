@@ -11,7 +11,7 @@ class Solution:
                 return x
             
             parent[x] = find(parent[x])
-            return find(parent[x])
+            return parent[x]
         
         for i in range(size):
             for j in range(i + 1 , size):
