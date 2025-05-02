@@ -4,7 +4,7 @@ class Solution:
         parent = [i for i in range(size)]
         rank = [0 for i in range(size)]
         ans = size
-        
+
         def find(x):
         
             if parent[x] == x:
@@ -14,7 +14,7 @@ class Solution:
             return find(parent[x])
         
         for i in range(size):
-            for j in range(size):
+            for j in range(i + 1 , size):
 
                 if isConnected[i][j] == 1:
                     xroot = find(i)
