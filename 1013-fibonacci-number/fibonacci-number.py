@@ -1,14 +1,15 @@
 class Solution:
     def fib(self, n: int) -> int:
-        memory = defaultdict(int)
+        memory = {}
         def fibonnaci (i):
             if i == 0 or i == 1 :
                 return i
             
-            if memory[i] != 0 :
+            if i in memory:
                 return memory[i]
             
-            return fibonnaci(i - 1) + fibonnaci(i - 2)
-        
+            memory[i] = fibonnaci(i - 1) + fibonnaci(i - 2)
+            return memory[i]
+            
         return fibonnaci(n)
         
